@@ -174,19 +174,19 @@ class Restore Extends Base\RestoreBase{
 		$skipoptions = $this->getCliarguments();
 		$backupinfo = $this->getBackupInfo();
 		$return = false;
-		if ($backupinfo['warmspareenabled'] == 'yes' && $backupinfo['warmspare_remotebind'] == 'yes') {
+		if (isset($backupinfo['warmspareenabled']) && isset($backupinfo['warmspare_remotebind']) && $backupinfo['warmspareenabled'] == 'yes' && $backupinfo['warmspare_remotebind'] == 'yes') {
 			$this->log(_("warmspare remotebind option enabled"));
 			$return = true;
 		}
-		if ($backupinfo['warmspareenabled'] == 'yes' && $backupinfo['warmspare_remotenat'] == 'yes') {
+		if (isset($backupinfo['warmspareenabled']) && isset($backupinfo['warmspare_remotenat']) && $backupinfo['warmspareenabled'] == 'yes' && $backupinfo['warmspare_remotenat'] == 'yes') {
 			$this->log(_("warmspare remotenat option enabled"));
 			$return = true;
 		}
-		if ($skipoptions['skipbindport']) {
+		if (isset($skipoptions['skipbindport']) && $skipoptions['skipbindport']) {
 			$this->log(_("user passed option for skip bind address section"));
 			$return = true;
 		}
-		if ($skipoptions['skipremotenat']) {
+		if (isset($skipoptions['skipremotenat']) && $skipoptions['skipremotenat']) {
 			$this->log(_("user passed option for skip NAT settings section"));
 			$return = true;
 		}
