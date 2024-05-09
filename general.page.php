@@ -98,6 +98,10 @@
 	</div>
 	<!--END Allow SIP Guests-->
 	<!-- TLS Port Settings -->
+	<?php
+	$version = \FreePBX::Config()->get('ASTVERSION');
+	if(version_compare($version, '21', 'lt')) {
+	?>
 	<div class="element-container">
 		<div class="row">
 			<div class="form-group">
@@ -151,6 +155,7 @@ foreach ($tlsowners as $chan => $txt) {
 		</div>
 	</div>
 </div>
+<?php } ?>
 <div class="section-title" data-for="ssnat">
 	<h3><i class="fa fa-minus"></i><?php echo _("NAT Settings") ?></h3>
 </div>
