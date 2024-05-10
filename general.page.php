@@ -154,8 +154,8 @@ foreach ($tlsowners as $chan => $txt) {
 			</div>
 		</div>
 	</div>
-</div>
 <?php } ?>
+</div>
 <div class="section-title" data-for="ssnat">
 	<h3><i class="fa fa-minus"></i><?php echo _("NAT Settings") ?></h3>
 </div>
