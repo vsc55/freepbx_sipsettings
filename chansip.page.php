@@ -927,7 +927,7 @@ if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 					<i class="fa fa-question-circle fpbx-help-icon" data-for="tlsbindport"></i>
 				</div>
 				<div class="col-md-9">
-					<input type="text" class="form-control validate-ip-port" id="tlsbindport" name="tlsbindport" value="<?php echo $tlsbindport ?>">
+					<input type="text" class="form-control validate-ip-port" id="tlsbindport" name="tlsbindport" value="<?php echo $tlsbindport ?? ''; ?>">
 				</div>
 			</div>
 		</div>
