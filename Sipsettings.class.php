@@ -375,14 +375,11 @@ class Sipsettings extends FreePBX_Helpers implements BMO {
 			$this->setConfig('pjsip_keep_alive_interval', $_REQUEST['pjsip_keep_alive_interval']);
 		}
 
-		$ver_list=array("13.24.0", "16.1.0", "17.0.0", "18.0.0","20.0.0");
-
-		if (isset($_REQUEST['use_callerid_contact']) && version_min($this->FreePBX->Config->get('ASTVERSION'), $ver_list) == true) {
+		if (isset($_REQUEST['use_callerid_contact'])) {
 			$this->setConfig('pjsip_use_callerid_contact', $_REQUEST['use_callerid_contact']);
 		}
 
-		$asteriskVersions =["13.25.0", "16.2.0", "17.0.0", "18.0.0"];
-		if (isset($_REQUEST['taskprocessor_overload_trigger']) && version_min($this->FreePBX->Config->get('ASTVERSION'), $asteriskVersions) == true) {
+		if (isset($_REQUEST['taskprocessor_overload_trigger'])) {
 			$this->setConfig('taskprocessor_overload_trigger', $_REQUEST['taskprocessor_overload_trigger']);
 		}
 		

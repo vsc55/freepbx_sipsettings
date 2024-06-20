@@ -232,9 +232,6 @@ foreach ($protocols as $p) {
 	</div>
 	<!--END Allow reload-->
 
-	<?php 
-	$ver_list=["13.24.0", "16.1.0", "17.0.0", "18.0.0"];
-	if (version_min(\FreePBX::Config()->get('ASTVERSION'),$ver_list) == true) { ?>
 	<!--Caller ID into Contact Header-->
 	<div class="element-container">
 		<div class="row">
@@ -257,15 +254,7 @@ foreach ($protocols as $p) {
 			</div>
 		</div>
 	</div>
-	<!--END Caller ID into Contact Header-->
-	<?php 
-	}
-	?>	
 	
-	<!--Taskprocessor Overload Trigger-->
-	<?php 
-	$asteriskVersions=array("13.25.0", "16.2.0", "17.0.0", "18.0.0","20.0.0");
-	if (version_min(\FreePBX::Config()->get('ASTVERSION'),$asteriskVersions) == true) { ?>
 	<div class="element-container">
 		<div class="row">
 			<div class="col-md-12">
@@ -293,7 +282,6 @@ foreach ($protocols as $p) {
 			</div>
 		</div>
 	</div>
-	<?php } ?>
 	<!--Taskprocessor Overload Trigger-->
 
 	<!--Show Advanced Settings-->
